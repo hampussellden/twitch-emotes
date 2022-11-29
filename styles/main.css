@@ -12,7 +12,6 @@ img.hunter {
   transform: translate(-50%, -50%);
   left: 0px;
   max-height: 64px;
-  transition: 0.2s;
 }
 img.target {
   position: absolute;
@@ -21,6 +20,11 @@ img.target {
   right: -50px;
   max-height: 64px;
   transition: 0.5s;
+}
+@media screen and (max-width: 430px) {
+  img.hunter {
+    transition: 0.2s;
+  }
 }
 .area {
   min-height: 60px;
