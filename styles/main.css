@@ -12,6 +12,7 @@ img.hunter {
   transform: translate(-50%, -50%);
   left: 0px;
   max-height: 64px;
+  transition: 0.2s;
 }
 img.target {
   position: absolute;
@@ -19,6 +20,7 @@ img.target {
   transform: translate(-50%, -50%);
   right: -50px;
   max-height: 64px;
+  transition: 0.5s;
 }
 .area {
   min-height: 60px;
