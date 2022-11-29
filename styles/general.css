@@ -3,11 +3,11 @@
 }
 :root {
   --twitch-purple: #6441a5;
-  --odd-area: #a6a6a6;
+  --odd-area: #cccccc;
   --even-area: #e8e8e8;
   --font-color: #ffffff;
   --black: #0d0c0c;
-  --box-shadow: -2px -2px 2px 2px var(--black);
+  --box-shadow: 0px 2px 2px 2px var(--black);
   --text-shadow: -2px 2px 2px var(--black);
 }
 body {
@@ -21,4 +21,9 @@ body {
   position: relative;
   margin: 0 auto;
   background-color: var(--twitch-purple);
+}
+@media screen and (min-width: 430px) {
+  html {
+    font-size: 24px;
+  }
 }
