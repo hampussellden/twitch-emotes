@@ -44,7 +44,6 @@ const emotes = [
 
 const body = document.querySelector('body');
 //Area prep
-
 const createEmote = (emote, area) => {
   const image = document.createElement('img');
   image.src = emote;
@@ -55,10 +54,6 @@ const getEmote = () => {
   const index = Math.floor(Math.random() * (emotes.length - 0));
   return emotes[index];
 };
-// const getMouseYPos = (e) => {
-//   const cursorY = e.clientY;
-// };
-// body.addEventListener('click', getMouseYPos());
 
 const container = document.querySelector('div.container');
 const areas = document.querySelectorAll('div.area');
@@ -67,4 +62,25 @@ areas.forEach((area) => {
   area.addEventListener('click', () => {
     createEmote(getEmote(), area);
   });
+});
+
+const hunter = document.querySelector('img.hunter');
+
+body.addEventListener('mousemove', (e) => {
+  let top = e.pageY;
+  hunter.style.top = top + 'px';
+});
+
+const target = document.querySelector('img.target');
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+container.addEventListener('click', (e) => {
+  let targetTop = getRandomArbitrary(100, 800);
+  target.style.top = targetTop + 'px';
+});
+const partyBtn = document.querySelector('button.party-btn');
+const dancers = document.querySelector('div.dancers');
+partyBtn.addEventListener('click', () => {
+  dancers.classList.toggle('dancing');
 });
