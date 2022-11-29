@@ -41,7 +41,16 @@ const emotes = [
   ['images/widepeepoSad.png'],
   ['images/YEP.png'],
 ];
-
+let gifs = [
+  ['images/gifs/borpaspin.webp'],
+  ['images/gifs/modCheck.webp'],
+  ['images/gifs/pepegacard.webp'],
+  ['images/gifs/popCatRotate.webp'],
+  ['images/gifs/ratjam.webp'],
+  ['images/gifs/sadgeclap.webp'],
+  ['images/gifs/vicksyspin.webp'],
+  ['images/gifs/wickedsteer.webp'],
+];
 const body = document.querySelector('body');
 //Area prep
 const createEmote = (emote, area) => {
@@ -54,6 +63,7 @@ const getEmote = () => {
   const index = Math.floor(Math.random() * (emotes.length - 0));
   return emotes[index];
 };
+
 //AREAS CLICKABLE
 const container = document.querySelector('div.container');
 const areas = document.querySelectorAll('div.area');
@@ -72,9 +82,10 @@ container.addEventListener('mousemove', (e) => {
 
 // TARGET
 const target = document.querySelector('img.target');
-function getRandomArbitrary(min, max) {
+// inspirerad av https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+const getRandomArbitrary = (min, max) => {
   return Math.random() * (max - min) + min;
-}
+};
 container.addEventListener('click', (e) => {
   let targetTop = getRandomArbitrary(10, 85);
   target.style.top = targetTop + 'vh';
@@ -86,3 +97,36 @@ const dancers = document.querySelector('div.dancers');
 partyBtn.addEventListener('click', () => {
   dancers.classList.toggle('dancing');
 });
+//DANCERS DIV
+
+//shuffle function copied from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+const shuffle = (array) => {
+  let currentIndex = array.length,
+    randomIndex;
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+  return array;
+};
+
+//create dancers
+const createDancer = (i) => {
+  const dancer = document.createElement('img');
+  dancer.src = gifs[i];
+  dancer.classList.add('dancer');
+  dancers.append(dancer);
+};
+
+gifs = shuffle(gifs);
+for (let i = 0; i < 5; i++) {
+  createDancer(i);
+  console.log(i);
+}
