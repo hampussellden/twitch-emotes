@@ -21,6 +21,7 @@ body {
   position: relative;
   margin: 0 auto;
   background-color: var(--twitch-purple);
+  font-family: 'Inter';
 }
 @media screen and (min-width: 430px) {
   html {
