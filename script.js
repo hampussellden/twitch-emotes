@@ -1,8 +1,14 @@
-//Generate areas
-const spaceToFill = Math.floor(container.clientHeight / 60 + 1);
-for (let index = 0; index < spaceToFill; index++) {
-  generateAreas(index);
-}
+/* Generate new areas if window is resized.
+Will only generate new areas if the containers height increased because of the resizing.
+Also removes the children from the container so that we don't end up with excess divs and so it keeps even/odd consistent*/
+getAreas();
+window.addEventListener('resize', () => {
+  if (container.childElementCount < spaceToFill()) {
+    removeChildren();
+    getAreas();
+  }
+});
+
 //AREAS CLICKABLE
 const areas = document.querySelectorAll('div.area');
 areas.forEach((area) => {

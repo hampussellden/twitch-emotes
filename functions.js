@@ -43,8 +43,8 @@ const createDancer = (i) => {
   dancers.append(dancer);
 };
 
-//Generate Areas functios. Called in script
-const generateAreas = (i) => {
+//Generate Areas functions
+const generateArea = (i) => {
   const div = document.createElement('div');
   div.classList.add('area');
   if (i % 2 == 0) {
@@ -53,4 +53,20 @@ const generateAreas = (i) => {
     div.classList.add('odd');
   }
   container.append(div);
+};
+//A function to call when we need to resize
+const spaceToFill = () => {
+  return Math.floor(container.clientHeight / 60 + 1);
+};
+//Will make sure we only generate as many divs as we need
+const getAreas = () => {
+  for (let i = 0; i < spaceToFill(); i++) {
+    generateArea(i);
+  }
+};
+// remove all the containers children - https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
+const removeChildren = () => {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
 };
