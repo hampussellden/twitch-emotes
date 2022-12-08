@@ -6,16 +6,20 @@ window.addEventListener('resize', () => {
   if (container.childElementCount < spaceToFill()) {
     removeChildren();
     getAreas();
+    makeAreasClickable();
   }
 });
 
 //AREAS CLICKABLE
-const areas = document.querySelectorAll('div.area');
-areas.forEach((area) => {
-  area.addEventListener('click', () => {
-    createEmote(getEmote(), area);
+const makeAreasClickable = () => {
+  const areas = document.querySelectorAll('div.area');
+  areas.forEach((area) => {
+    area.addEventListener('click', () => {
+      createEmote(getEmote(), area);
+    });
   });
-});
+};
+makeAreasClickable();
 
 //HUNTER
 const hunter = document.querySelector('img.hunter');
