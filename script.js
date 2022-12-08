@@ -1,7 +1,9 @@
-const body = document.querySelector('body');
-
+//Generate areas
+const spaceToFill = Math.floor(container.clientHeight / 60 + 1);
+for (let index = 0; index < spaceToFill; index++) {
+  generateAreas(index);
+}
 //AREAS CLICKABLE
-const container = document.querySelector('div.container');
 const areas = document.querySelectorAll('div.area');
 areas.forEach((area) => {
   area.addEventListener('click', () => {
@@ -40,5 +42,4 @@ partyBtn.addEventListener('click', () => {
 gifs = shuffle(gifs);
 for (let i = 0; i < 5; i++) {
   createDancer(i);
-  console.log(i);
 }

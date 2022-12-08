@@ -1,3 +1,5 @@
+const body = document.querySelector('body');
+const container = document.querySelector('div.container');
 //Generate an emote bullet
 const createEmote = (emote, area) => {
   const image = document.createElement('img');
@@ -39,4 +41,16 @@ const createDancer = (i) => {
   dancer.src = gifs[i];
   dancer.classList.add('dancer');
   dancers.append(dancer);
+};
+
+//Generate Areas functios. Called in script
+const generateAreas = (i) => {
+  const div = document.createElement('div');
+  div.classList.add('area');
+  if (i % 2 == 0) {
+    div.classList.add('even');
+  } else {
+    div.classList.add('odd');
+  }
+  container.append(div);
 };

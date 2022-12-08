@@ -1,10 +1,15 @@
 .container {
   border: 2px solid black;
   width: calc(100vw - 48px);
-  max-height: 85vh;
+  height: 85vh;
   overflow: hidden;
   position: relative;
   cursor: none;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: calc(100vw - 128px);
+  }
 }
 body.party-mode .container {
   max-height: calc(85vh - 40px);
@@ -25,11 +30,14 @@ img.target {
   transition: 0.5s;
 }
 @media screen and (min-width: 768px) {
+  img.hunter {
+    left: 50px;
+  }
   img.target {
-    right: -100px;
+    right: -50px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 460px) {
   img.hunter {
     transition: 0.2s;
   }
