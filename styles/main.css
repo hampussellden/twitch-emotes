@@ -1,10 +1,13 @@
 .container {
   border: 2px solid black;
-  width: 90vw;
-  height: 85vh;
+  width: calc(100vw - 48px);
+  max-height: 85vh;
   overflow: hidden;
   position: relative;
   cursor: none;
+}
+body.party-mode .container {
+  max-height: calc(85vh - 40px);
 }
 img.hunter {
   position: absolute;
@@ -21,7 +24,12 @@ img.target {
   max-height: 64px;
   transition: 0.5s;
 }
-@media screen and (max-width: 430px) {
+@media screen and (min-width: 768px) {
+  img.target {
+    right: -100px;
+  }
+}
+@media screen and (max-width: 768px) {
   img.hunter {
     transition: 0.2s;
   }
@@ -58,7 +66,7 @@ img.target {
   align-self: center;
 }
 
-@media screen and (min-width: 430px) {
+@media screen and (min-width: 768px) {
   img.hunter {
     max-height: none;
   }

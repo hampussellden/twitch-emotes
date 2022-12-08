@@ -19,7 +19,7 @@ container.addEventListener('mousemove', (e) => {
 // TARGET
 const target = document.querySelector('img.target');
 container.addEventListener('click', (e) => {
-  let targetTop = getRandomArbitrary(10, 85);
+  let targetTop = getRandomArbitrary(15, 95);
   target.style.top = targetTop + 'vh';
 });
 
@@ -28,6 +28,12 @@ const partyBtn = document.querySelector('button.party-btn');
 const dancers = document.querySelector('div.dancers');
 partyBtn.addEventListener('click', () => {
   dancers.classList.toggle('dancing');
+  body.classList.toggle('party-mode');
+  if (partyBtn.textContent === 'Party Mode') {
+    partyBtn.textContent = 'Normal Mode';
+  } else {
+    partyBtn.textContent = 'Party Mode';
+  }
 });
 
 //shuffle dancers with every reload

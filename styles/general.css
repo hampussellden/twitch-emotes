@@ -3,12 +3,24 @@
 }
 :root {
   --twitch-purple: #6441a5;
+  --yellow: hsl(58, 100%, 68%);
   --odd-area: #cccccc;
   --even-area: #e8e8e8;
   --font-color: #ffffff;
   --black: #0d0c0c;
-  --box-shadow: 0px 2px 2px 2px var(--black);
-  --text-shadow: 0px 2px 2px var(--black);
+  --box-shadow: 0px 1px 2px 2px var(--black);
+  --text-shadow: 0px 0px 2px var(--black);
+  --gradient-animation: gradient 2s ease infinite;
+  --gradient-background: linear-gradient(
+    -45deg,
+    var(--twitch-purple),
+    var(--yellow)
+  );
+  --gradient-button: linear-gradient(
+    to left,
+    var(--twitch-purple),
+    var(--yellow)
+  );
 }
 body {
   display: flex;
@@ -22,9 +34,26 @@ body {
   margin: 0 auto;
   background-color: var(--twitch-purple);
   font-family: 'Inter';
+  transition: 0.2s;
 }
-@media screen and (min-width: 430px) {
+body.party-mode {
+  background: var(--gradient-background);
+  background-size: 400% 400%;
+  animation: var(--gradient-animation);
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media screen and (min-width: 768px) {
   html {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
