@@ -22,10 +22,28 @@
     </header>
     <div class="dancers"></div>
     <div class="container"></div>
-    <img class="hunter" src="images/MonkaGun.webp" alt="" />
-    <img class="target" src="images/monkaH.webp" alt="" />
-    <script src="arrays.js"></script>
-    <script src="functions.js"></script>
-    <script src="script.js"></script>
+    <img
+      srcset="
+        images/hunter/monkaGun-small.png  50w,
+        images/hunter/monkaGun-large.png 100w
+      "
+      sizes="(max-width:768px) 25px, 50px"
+      class="hunter"
+      src="images/hunter/monkaGun-large.png"
+      alt=""
+    />
+    <img
+      srcset="
+        images/target/monkaH-small.png  56w,
+        images/target/monkaH-large.png 112w
+      "
+      sizes="(max-width:768px) 28px, 56px"
+      class="target"
+      src="images/target/monkaH-large.png"
+      alt=""
+    />
+    <script src="scripts/arrays.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
