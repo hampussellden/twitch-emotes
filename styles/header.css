@@ -17,13 +17,11 @@ header h1 {
   text-shadow: var(--text-shadow);
   font-size: 1rem;
   flex-grow: 1;
-  max-width: 188px;
 }
 
 /* Party Button */
 button.party-btn {
   padding: 4px 12px;
-  max-width: 188px;
   border-radius: 0.4rem;
   font-size: 1rem;
   color: var(--font-color);
@@ -31,8 +29,7 @@ button.party-btn {
   border: 2px solid var(--black);
   transition: 0.4s;
   background-image: var(--gradient-button);
-  background-size: 100% auto;
-  animation: var(--gradient-animation);
+  cursor: pointer;
 }
 body.party-mode button.party-btn {
   background-image: none;
