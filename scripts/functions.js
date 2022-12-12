@@ -1,15 +1,22 @@
 const body = document.querySelector('body');
 const container = document.querySelector('div.container');
 //Generate an emote bullet
-const createEmote = (emote, area) => {
-  const image = document.createElement('img');
-  image.src = emote;
-  image.classList.add('bullet');
-  area.appendChild(image);
+const createEmote = (area) => {
+  const picture = document.createElement('picture');
+  picture.innerHTML = `
+  <source media="(max-width:768px)" srcset="${getEmoteSmall()}">
+  <img src="${getEmoteLarge()}" alt="">
+  `;
+  picture.classList.add('bullet');
+  area.appendChild(picture);
 };
-const getEmote = () => {
+const getEmoteSmall = () => {
   const index = Math.floor(Math.random() * (emotes.length - 0));
-  return emotes[index];
+  return emotes[index][0];
+};
+const getEmoteLarge = () => {
+  const index = Math.floor(Math.random() * (emotes.length - 0));
+  return emotes[index][1];
 };
 
 // random Number function inspired by https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range

@@ -1,5 +1,7 @@
+/* CONTAINER */
 .container {
   border: 2px solid black;
+  border-radius: 0.4rem;
   width: calc(100vw - 48px);
   height: 85vh;
   overflow: hidden;
@@ -14,6 +16,7 @@
 body.party-mode .container {
   max-height: calc(85vh - 40px);
 }
+/* Hunter and Target */
 img.hunter {
   position: absolute;
   z-index: 9;
@@ -32,9 +35,11 @@ img.target {
 @media screen and (min-width: 768px) {
   img.hunter {
     left: 50px;
+    height: 96px;
   }
   img.target {
     right: -36px;
+    height: 96px;
   }
 }
 @media screen and (max-width: 460px) {
@@ -55,6 +60,7 @@ img.target {
 .area.even {
   background-color: var(--even-area);
 }
+/* BULLETS STYLING */
 @keyframes bullet {
   from {
     transform: translateX(0);
@@ -67,20 +73,14 @@ img.target {
   animation: bullet 4s ease-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  /* min-height: 60px;
-  min-width: 60px; */
+  min-height: 60px;
+  min-width: 60px;
   position: absolute;
   align-self: center;
+  align-items: center;
+}
+.bullet source,
+.bullet img {
   width: 100%;
   height: auto;
-  max-width: 28px;
-}
-
-@media screen and (min-width: 768px) {
-  img.hunter {
-    height: 96px;
-  }
-  img.target {
-    height: 96px;
-  }
 }

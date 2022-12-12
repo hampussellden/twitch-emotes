@@ -24,7 +24,7 @@ header h1 {
 button.party-btn {
   padding: 4px 12px;
   max-width: 188px;
-  border-radius: 20px;
+  border-radius: 0.4rem;
   font-size: 1rem;
   color: var(--font-color);
   text-shadow: var(--text-shadow);

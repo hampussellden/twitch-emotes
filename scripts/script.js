@@ -10,27 +10,27 @@ window.addEventListener('resize', () => {
   }
 });
 
-//AREAS CLICKABLE
+//Give ghe newly created areas eventlisteners
 const makeAreasClickable = () => {
   const areas = document.querySelectorAll('div.area');
   areas.forEach((area) => {
     area.addEventListener('click', () => {
-      createEmote(getEmote(), area);
+      createEmote(area);
     });
   });
 };
 makeAreasClickable();
 
-//HUNTER
+//Hunter emotes movement
 const hunter = document.querySelector('img.hunter');
 container.addEventListener('mousemove', (e) => {
   let top = e.pageY;
   hunter.style.top = top + 'px';
 });
 
-// TARGET
+// Target emotes movement logic
 const target = document.querySelector('img.target');
-container.addEventListener('click', (e) => {
+container.addEventListener('click', () => {
   let targetTop = getRandomArbitrary(15, 95);
   target.style.top = targetTop + 'vh';
 });
