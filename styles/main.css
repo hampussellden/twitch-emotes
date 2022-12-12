@@ -18,7 +18,7 @@ img.hunter {
   position: absolute;
   z-index: 9;
   transform: translate(-50%, -50%);
-  left: 0px;
+  left: 32px;
   max-height: 64px;
 }
 img.target {
@@ -34,7 +34,7 @@ img.target {
     left: 50px;
   }
   img.target {
-    right: -50px;
+    right: -36px;
   }
 }
 @media screen and (max-width: 460px) {
@@ -64,8 +64,7 @@ img.target {
   }
 }
 .bullet {
-  animation: 4s ease-out;
-  animation-name: bullet;
+  animation: bullet 4s ease-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   min-height: 60px;
@@ -76,9 +75,9 @@ img.target {
 
 @media screen and (min-width: 768px) {
   img.hunter {
-    max-height: none;
+    max-height: 96px;
   }
   img.target {
-    max-height: none;
+    max-height: 96px;
   }
 }

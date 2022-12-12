@@ -21,6 +21,7 @@
     var(--twitch-purple),
     var(--yellow)
   );
+  --font: 'Inter';
 }
 body {
   display: flex;
@@ -30,7 +31,7 @@ body {
   margin: 0px auto;
   position: relative;
   background-color: var(--twitch-purple);
-  font-family: 'Inter';
+  font-family: var(--font);
   transition: 0.2s;
 }
 body.party-mode {
