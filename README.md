@@ -1,4 +1,4 @@
-INSERT MANDATORY GIF
+![](https://media.giphy.com/media/10yXFkBJ0MwGQ0/giphy.gif)
 
 # Emote hunting
 
