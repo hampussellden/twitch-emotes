@@ -10,11 +10,11 @@ In the middle of our vieport is the main playing field, if we are on a desktop w
 
 # Code Review
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+1. `script.js:6` - The if statement is never true, as far as I can tell?
+2. `functions.js:75-79` - You could use foreach instead of while here
+3. `script.js:44-49` - Could use an short hand here like this: `partyBtn.textContent === 'Party Mode' ? 'Normal mode' : 'Party Mode';`
+4. `header.css:20, 26, 34` - `max-width` and `background-size: 100% auto;` is not needed
+5. `header.css:24` - Could use an `cursor: pointer;` for accessibility
 
 # Testers
 
