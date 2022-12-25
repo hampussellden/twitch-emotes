@@ -3,7 +3,7 @@
   border: 2px solid black;
   border-radius: 0.4rem;
   width: calc(100vw - 48px);
-  height: 85vh;
+  height: 85dvh;
   overflow: hidden;
   position: relative;
   cursor: none;
